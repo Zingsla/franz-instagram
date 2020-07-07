@@ -98,9 +98,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fUo-4y-Gh6">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fUo-4y-Gh6">
                                 <rect key="frame" x="0.0" y="56" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3b6-jg-WUX" appends="YES" id="Q5g-2i-Lia"/>
+                                </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D1E-k9-lNZ">
                                 <rect key="frame" x="136" y="69" width="240" height="115"/>
@@ -115,8 +119,16 @@
                         <viewLayoutGuide key="safeArea" id="6Fk-wI-H4B"/>
                     </view>
                     <navigationItem key="navigationItem" id="bqn-gS-VO5">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Esi-BC-bgk"/>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="X2q-8a-B5r"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Esi-BC-bgk">
+                            <connections>
+                                <action selector="didTapCancel:" destination="gn3-6N-vNs" id="OLp-vU-9Q8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="X2q-8a-B5r">
+                            <connections>
+                                <action selector="didTapPost:" destination="gn3-6N-vNs" id="Y3Z-eO-YHS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="captionTextView" destination="D1E-k9-lNZ" id="6kN-1b-lqc"/>
@@ -124,6 +136,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acy-g5-aKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3b6-jg-WUX">
+                    <connections>
+                        <action selector="didTapImage:" destination="gn3-6N-vNs" id="7ab-fS-xrz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3195.6521739130435" y="126.5625"/>
         </scene>
