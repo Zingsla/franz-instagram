@@ -79,11 +79,53 @@
                                 <action selector="didTapLogout:" destination="beW-B1-NoK" id="nrE-SD-t6l"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New Post" image="insta_camera_btn" id="bF0-cF-WBw">
+                            <connections>
+                                <segue destination="K03-hk-iyv" kind="presentation" id="Pc5-Pt-pKU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waR-E6-s6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1720" y="127"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="gA2-Sn-gLN">
+            <objects>
+                <viewController id="gn3-6N-vNs" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bIn-sE-BTz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fUo-4y-Gh6">
+                                <rect key="frame" x="0.0" y="56" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D1E-k9-lNZ">
+                                <rect key="frame" x="136" y="69" width="240" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Fk-wI-H4B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bqn-gS-VO5">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Esi-BC-bgk"/>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="X2q-8a-B5r"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="D1E-k9-lNZ" id="6kN-1b-lqc"/>
+                        <outlet property="imageSelectView" destination="fUo-4y-Gh6" id="Wdx-B3-jqb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Acy-g5-aKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3195.6521739130435" y="126.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dyB-PW-VYg">
@@ -103,8 +145,28 @@
             </objects>
             <point key="canvasLocation" x="932" y="127"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xud-4G-Xbq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K03-hk-iyv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FJG-IS-M0s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gn3-6N-vNs" kind="relationship" relationship="rootViewController" id="tA6-3X-QtR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vjg-gQ-P7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2449" y="127"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Icon-60" width="60" height="60"/>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
 </document>
