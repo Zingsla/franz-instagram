@@ -73,7 +73,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="To6-Kx-MSH"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Feed" id="Dcq-g3-9nO"/>
+                    <navigationItem key="navigationItem" title="Feed" id="Dcq-g3-9nO">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="URV-za-CuW">
+                            <connections>
+                                <action selector="didTapLogout:" destination="beW-B1-NoK" id="nrE-SD-t6l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waR-E6-s6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
