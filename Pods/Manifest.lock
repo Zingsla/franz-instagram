@@ -4,9 +4,12 @@ PODS:
     - Parse/Core (= 1.18.0)
   - Parse/Core (1.18.0):
     - Bolts/Tasks (= 1.9.1)
+  - Parse/UI (1.18.0):
+    - Parse/Core
 
 DEPENDENCIES:
   - Parse
+  - Parse/UI
 
 SPEC REPOS:
   trunk:
@@ -17,6 +20,6 @@ SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   Parse: 79bdda34fdb7eb2a707a43a951c8aae236cb3e34
 
-PODFILE CHECKSUM: 7c3499675be41af10f1848da5f064ad8e8162387
+PODFILE CHECKSUM: 185083bd9d80157a2dcf94a2358bf7128c640cf5
 
 COCOAPODS: 1.9.3
