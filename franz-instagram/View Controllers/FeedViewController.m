@@ -8,10 +8,14 @@
 
 #import "FeedViewController.h"
 #import "LoginViewController.h"
+#import "PostCell.h"
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
 
-@interface FeedViewController ()
+@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *posts;
 
 @end
 
@@ -19,7 +23,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self fetchPosts];
+}
+
+- (void)fetchPosts {
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            self.posts = [NSMutableArray arrayWithArray:posts];
+            NSLog(@"Successfully fetched posts from database!");
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"Error fetching posts: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (IBAction)didTapLogout:(id)sender {
@@ -35,6 +60,16 @@
             NSLog(@"Successfully logged out!");
         }
     }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    cell.post = self.posts[indexPath.row];
+    return cell;
 }
 
 /*
