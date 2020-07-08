@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "NSDate+DateTools.h"
 @import Parse;
 
 @interface DetailsViewController ()
@@ -27,6 +28,7 @@
     [self.postImageView loadInBackground];
     self.usernameLabel.text = self.post.author.username;
     self.captionLabel.text = self.post.caption;
+    self.dateLabel.text = [NSString stringWithFormat:@"%@ ago", self.post.createdAt.shortTimeAgoSinceNow];
 }
 
 /*
