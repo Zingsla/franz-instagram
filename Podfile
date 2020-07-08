@@ -8,6 +8,7 @@ target 'franz-instagram' do
   # Pods for franz-instagram
   pod 'Parse'
   pod 'Parse/UI'
+  pod 'DateTools'
 
   target 'franz-instagramTests' do
     inherit! :search_paths
