@@ -20,6 +20,7 @@
     self.postImageView.file = post.image;
     [self.postImageView loadInBackground];
     self.postCaptionLabel.text = post.caption;
+    self.postUsernameLabel.text = post.author.username;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
