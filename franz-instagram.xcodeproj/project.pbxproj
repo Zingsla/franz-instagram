@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		224D878C24B7C40600B22F5A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224D878B24B7C40600B22F5A /* ProfileViewController.m */; };
+		224D878F24B7D0ED00B22F5A /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224D878E24B7D0ED00B22F5A /* InfiniteScrollActivityView.m */; };
 		225CDE8D24B3D6FC00423889 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CDE8C24B3D6FC00423889 /* AppDelegate.m */; };
 		225CDE9024B3D6FC00423889 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CDE8F24B3D6FC00423889 /* SceneDelegate.m */; };
 		225CDE9624B3D6FC00423889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225CDE9424B3D6FC00423889 /* Main.storyboard */; };
@@ -50,6 +51,8 @@
 		1C88314702F3A11245063B7A /* Pods-franz-instagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-franz-instagramTests.release.xcconfig"; path = "Target Support Files/Pods-franz-instagramTests/Pods-franz-instagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		224D878A24B7C40600B22F5A /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		224D878B24B7C40600B22F5A /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		224D878D24B7D0ED00B22F5A /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		224D878E24B7D0ED00B22F5A /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		225CDE8824B3D6FC00423889 /* franz-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "franz-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225CDE8B24B3D6FC00423889 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		225CDE8C24B3D6FC00423889 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 			children = (
 				22B0FF9924B52B730059835F /* PostCell.h */,
 				22B0FF9A24B52B730059835F /* PostCell.m */,
+				224D878D24B7D0ED00B22F5A /* InfiniteScrollActivityView.h */,
+				224D878E24B7D0ED00B22F5A /* InfiniteScrollActivityView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				22A4EE9424B5140000976F89 /* ComposeViewController.m in Sources */,
 				225CDE9E24B3D6FD00423889 /* main.m in Sources */,
 				2277820724B65B8600231E49 /* DetailsViewController.m in Sources */,
+				224D878F24B7D0ED00B22F5A /* InfiniteScrollActivityView.m in Sources */,
 				225CDE9024B3D6FC00423889 /* SceneDelegate.m in Sources */,
 				22A4EE9824B51C7500976F89 /* Post.m in Sources */,
 			);

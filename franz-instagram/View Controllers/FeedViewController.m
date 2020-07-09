@@ -8,16 +8,19 @@
 
 #import "FeedViewController.h"
 #import "DetailsViewController.h"
+#import "InfiniteScrollActivityView.h"
 #import "LoginViewController.h"
 #import "PostCell.h"
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
 
-@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *posts;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (strong, nonatomic) InfiniteScrollActivityView *loadingMoreView;
 
 @end
 
@@ -32,6 +35,15 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    self.loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    self.loadingMoreView.hidden = YES;
+    [self.tableView addSubview:self.loadingMoreView];
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.tableView.contentInset = insets;
     
     [self fetchPosts];
 }
@@ -50,6 +62,26 @@
             [self.refreshControl endRefreshing];
         } else {
             NSLog(@"Error fetching posts: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void)fetchMorePosts {
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.skip = self.posts.count;
+    postQuery.limit = 20;
+    
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            self.posts = [NSMutableArray arrayWithArray:[self.posts arrayByAddingObjectsFromArray:posts]];
+            NSLog(@"Successfully fetched more posts from database!");
+            [self.tableView reloadData];
+            [self.loadingMoreView stopAnimating];
+            self.isMoreDataLoading = false;
+        } else {
+            NSLog(@"Error fetching more posts: %@", error.localizedDescription);
         }
     }];
 }
@@ -77,6 +109,23 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     cell.post = self.posts[indexPath.row];
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!self.isMoreDataLoading) {
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+        
+        if (scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            self.isMoreDataLoading = YES;
+            
+            CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.contentSize.width, InfiniteScrollActivityView.defaultHeight);
+            self.loadingMoreView.frame = frame;
+            [self.loadingMoreView startAnimating];
+            
+            [self fetchMorePosts];
+        }
+    }
 }
 
 #pragma mark - Navigation
