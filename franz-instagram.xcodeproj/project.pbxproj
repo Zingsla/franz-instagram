@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224D878C24B7C40600B22F5A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224D878B24B7C40600B22F5A /* ProfileViewController.m */; };
 		225CDE8D24B3D6FC00423889 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CDE8C24B3D6FC00423889 /* AppDelegate.m */; };
 		225CDE9024B3D6FC00423889 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CDE8F24B3D6FC00423889 /* SceneDelegate.m */; };
 		225CDE9624B3D6FC00423889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225CDE9424B3D6FC00423889 /* Main.storyboard */; };
@@ -47,6 +48,8 @@
 		00DC22E1E9176A048A09B751 /* Pods-franz-instagram-franz-instagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-franz-instagram-franz-instagramUITests.release.xcconfig"; path = "Target Support Files/Pods-franz-instagram-franz-instagramUITests/Pods-franz-instagram-franz-instagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		08F15162F1879C11C37544EB /* Pods_franz_instagram_franz_instagramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_franz_instagram_franz_instagramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C88314702F3A11245063B7A /* Pods-franz-instagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-franz-instagramTests.release.xcconfig"; path = "Target Support Files/Pods-franz-instagramTests/Pods-franz-instagramTests.release.xcconfig"; sourceTree = "<group>"; };
+		224D878A24B7C40600B22F5A /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		224D878B24B7C40600B22F5A /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		225CDE8824B3D6FC00423889 /* franz-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "franz-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225CDE8B24B3D6FC00423889 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		225CDE8C24B3D6FC00423889 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				22A4EE9324B5140000976F89 /* ComposeViewController.m */,
 				2277820524B65B8600231E49 /* DetailsViewController.h */,
 				2277820624B65B8600231E49 /* DetailsViewController.m */,
+				224D878A24B7C40600B22F5A /* ProfileViewController.h */,
+				224D878B24B7C40600B22F5A /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				22A4EE9124B3DF9A00976F89 /* FeedViewController.m in Sources */,
 				225CDE8D24B3D6FC00423889 /* AppDelegate.m in Sources */,
 				22B0FF9B24B52B730059835F /* PostCell.m in Sources */,
+				224D878C24B7C40600B22F5A /* ProfileViewController.m in Sources */,
 				22A4EE9424B5140000976F89 /* ComposeViewController.m in Sources */,
 				225CDE9E24B3D6FD00423889 /* main.m in Sources */,
 				2277820724B65B8600231E49 /* DetailsViewController.m in Sources */,

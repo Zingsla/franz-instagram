@@ -1,19 +1,20 @@
 //
-//  FeedViewController.m
+//  ProfileViewController.m
 //  franz-instagram
 //
-//  Created by Jacob Franz on 7/6/20.
+//  Created by Jacob Franz on 7/9/20.
 //  Copyright © 2020 Jacob Franz. All rights reserved.
 //
 
-#import "FeedViewController.h"
+#import "ProfileViewController.h"
 #import "DetailsViewController.h"
 #import "LoginViewController.h"
+#import "Post.h"
 #import "PostCell.h"
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
 
-@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *posts;
@@ -21,7 +22,7 @@
 
 @end
 
-@implementation FeedViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +39,7 @@
 
 - (void)fetchPosts {
     PFQuery *postQuery = [Post query];
+    [postQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     postQuery.limit = 20;
@@ -45,11 +47,11 @@
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.posts = [NSMutableArray arrayWithArray:posts];
-            NSLog(@"Successfully fetched posts from database!");
+            NSLog(@"Successfully fetched profile posts from database!");
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
         } else {
-            NSLog(@"Error fetching posts: %@", error.localizedDescription);
+            NSLog(@"Error fetching profile posts: %@", error.localizedDescription);
         }
     }];
 }
@@ -79,11 +81,12 @@
     return cell;
 }
 
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"FeedDetailsSegue"]) {
+    if ([segue.identifier isEqualToString:@"ProfileDetailsSegue"]) {
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Post *post = self.posts[indexPath.row];
