@@ -15,35 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="Juy-Gq-QGu">
-                                <rect key="frame" x="143" y="84" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="0WY-Cw-MdC"/>
-                                    <constraint firstAttribute="width" constant="128" id="PyZ-ES-eF1"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="6OK-Kf-6Gw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psx-cg-1Ho">
-                                <rect key="frame" x="40" y="252" width="334" height="34"/>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psx-cg-1Ho">
+                                <rect key="frame" x="40" y="251" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBJ-NB-vhO">
-                                <rect key="frame" x="40" y="326" width="334" height="34"/>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBJ-NB-vhO">
+                                <rect key="frame" x="40" y="315" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-4G-fkv">
-                                <rect key="frame" x="40" y="400" width="64" height="34"/>
+                                <rect key="frame" x="40" y="379" width="64" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="enL-gL-Y5d"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="Djt-OD-YdZ">
+                                <rect key="frame" x="50" y="129" width="314" height="92"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF3-wE-gmI">
-                                <rect key="frame" x="329" y="400" width="45" height="34"/>
+                                <rect key="frame" x="329" y="379" width="45" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hCb-Oc-Vhb"/>
                                 </connections>
@@ -51,19 +57,25 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="OBJ-NB-vhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0uY-Ba-R1H"/>
-                            <constraint firstItem="psx-cg-1Ho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="20a-xV-cEX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="psx-cg-1Ho" secondAttribute="trailing" constant="40" id="9ar-d4-NKr"/>
-                            <constraint firstItem="cF3-wE-gmI" firstAttribute="top" secondItem="OBJ-NB-vhO" secondAttribute="bottom" constant="40" id="Dim-Pm-nSX"/>
-                            <constraint firstItem="OBJ-NB-vhO" firstAttribute="top" secondItem="psx-cg-1Ho" secondAttribute="bottom" constant="40" id="Rde-zG-RJ7"/>
-                            <constraint firstItem="cF3-wE-gmI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3ea-4G-fkv" secondAttribute="trailing" constant="40" id="TP3-PM-OON"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OBJ-NB-vhO" secondAttribute="trailing" constant="40" id="Upa-e6-Cbz"/>
-                            <constraint firstItem="cF3-wE-gmI" firstAttribute="trailing" secondItem="OBJ-NB-vhO" secondAttribute="trailing" id="bkX-RR-dcs"/>
-                            <constraint firstItem="psx-cg-1Ho" firstAttribute="top" secondItem="Juy-Gq-QGu" secondAttribute="bottom" constant="40" id="c5x-8L-eSD"/>
-                            <constraint firstItem="3ea-4G-fkv" firstAttribute="leading" secondItem="OBJ-NB-vhO" secondAttribute="leading" id="jZa-2c-bLE"/>
-                            <constraint firstItem="Juy-Gq-QGu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="pe9-XF-TJ0"/>
-                            <constraint firstItem="3ea-4G-fkv" firstAttribute="top" secondItem="OBJ-NB-vhO" secondAttribute="bottom" constant="40" id="qoC-mH-1sq"/>
-                            <constraint firstItem="Juy-Gq-QGu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vpK-J2-cT9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="psx-cg-1Ho" secondAttribute="trailing" constant="40" id="1Bu-bP-1KL"/>
+                            <constraint firstItem="OBJ-NB-vhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="1sK-jb-DPg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Djt-OD-YdZ" secondAttribute="trailing" constant="50" id="6u0-3o-hQ4"/>
+                            <constraint firstItem="Djt-OD-YdZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AZr-cx-oXN"/>
+                            <constraint firstItem="Djt-OD-YdZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="Ji8-Vy-iQP"/>
+                            <constraint firstItem="cF3-wE-gmI" firstAttribute="trailing" secondItem="OBJ-NB-vhO" secondAttribute="trailing" id="Kaq-uq-djr"/>
+                            <constraint firstItem="OBJ-NB-vhO" firstAttribute="top" secondItem="psx-cg-1Ho" secondAttribute="bottom" constant="30" id="Mho-YI-U9K"/>
+                            <constraint firstItem="cF3-wE-gmI" firstAttribute="top" secondItem="OBJ-NB-vhO" secondAttribute="bottom" constant="30" id="OLc-ca-NMz"/>
+                            <constraint firstItem="cF3-wE-gmI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3ea-4G-fkv" secondAttribute="trailing" constant="30" id="QWC-tU-kIG"/>
+                            <constraint firstItem="6OK-Kf-6Gw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Tor-EP-VhH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OBJ-NB-vhO" secondAttribute="trailing" constant="40" id="cdt-uE-Llk"/>
+                            <constraint firstAttribute="bottom" secondItem="6OK-Kf-6Gw" secondAttribute="bottom" id="eVW-bT-G43"/>
+                            <constraint firstItem="6OK-Kf-6Gw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="f4S-7e-r1N"/>
+                            <constraint firstItem="3ea-4G-fkv" firstAttribute="top" secondItem="OBJ-NB-vhO" secondAttribute="bottom" constant="30" id="hwc-jJ-JGW"/>
+                            <constraint firstItem="6OK-Kf-6Gw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iNO-e8-WSO"/>
+                            <constraint firstItem="psx-cg-1Ho" firstAttribute="top" secondItem="Djt-OD-YdZ" secondAttribute="bottom" constant="30" id="m14-2Z-5aE"/>
+                            <constraint firstItem="3ea-4G-fkv" firstAttribute="leading" secondItem="OBJ-NB-vhO" secondAttribute="leading" id="mhQ-zA-mRz"/>
+                            <constraint firstItem="Djt-OD-YdZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="nQw-z6-RWF"/>
+                            <constraint firstItem="psx-cg-1Ho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="qmE-By-tni"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -358,7 +370,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60" width="60" height="60"/>
+        <image name="backgroundImage" width="225" height="225"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
