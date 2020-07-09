@@ -7,6 +7,7 @@
 //
 
 #import "PostCell.h"
+#import "NSDate+DateTools.h"
 
 @implementation PostCell
 
@@ -21,6 +22,7 @@
     [self.postImageView loadInBackground];
     self.postCaptionLabel.text = post.caption;
     self.postUsernameLabel.text = post.author.username;
+    self.postDateLabel.text = [NSString stringWithFormat:@"%@ ago", self.post.createdAt.shortTimeAgoSinceNow];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
