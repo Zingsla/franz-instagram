@@ -2,7 +2,7 @@
 
 **Instagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **18** hours spent in total
 
 ## User Stories
 
@@ -24,10 +24,10 @@ The following **optional** features are implemented:
 - [x] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs for Home Feed and Profile
 - [x] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
 - [x] Show the username and creation time for each post
-- [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
+- [x] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - User Profiles:
-  - [ ] Allow the logged in user to add a profile photo
-  - [ ] Display the profile photo with each post
+  - [x] Allow the logged in user to add a profile photo
+  - [x] Display the profile photo with each post
   - [ ] Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [ ] User can like a post and see number of likes for each post in the post details screen.
@@ -39,27 +39,28 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How to best implement helper methods such as the resizeImage method
+2. Subclassing the PFUser object to make profile images easier
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+<img src='http://g.recordit.co/2rZNHtE9bn.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/ujjn2Fwpcr.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [Parse](https://parseplatform.org/) - database library
+- [DateTools](https://github.com/MatthewYork/DateTools) - date formatting library
+- [MBProgressHUD](https://www.bukovinski.com/link) - progress bar library
 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Initially had trouble installing the Parse Dashboard to view the database easily. Other than that, the project went very smoothly and was a very good learning experience overall.
 
 ## License
 
