@@ -20,6 +20,8 @@
     _post = post;
     self.postImageView.file = post.image;
     [self.postImageView loadInBackground];
+    self.profileImageView.file = post.author[@"profileImage"];
+    [self.profileImageView loadInBackground];
     self.postCaptionLabel.text = post.caption;
     self.postUsernameLabel.text = post.author.username;
     self.postDateLabel.text = [NSString stringWithFormat:@"%@ ago", self.post.createdAt.shortTimeAgoSinceNow];
